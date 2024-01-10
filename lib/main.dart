@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Future<List<ApiDataModel>> fetchData() async {
     final response = await http.get(Uri.parse(
-        'https://newsapi.org/v2/everything?q=tesla&from=2023-12-07&sortBy=publishedAt&apiKey=8274168b191f4f45a40aab04dae0b09a'));
+        'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8274168b191f4f45a40aab04dae0b09a'));
     if (response.statusCode == 200) {
       final jsonData = json.decode(response.body);
       final List<dynamic> data = jsonData['articles'];
